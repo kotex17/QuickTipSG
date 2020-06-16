@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game-types>
+    <game-type>
+        <id>1</id>
+        <name>First game type</name>
+        <ticket>
+            <range>90</range>
+            <picks>5</picks>
+        </ticket>
+    </game-type>
+    <game-type>
+        <id>2</id>
+        <name>Second game type</name>
+        <ticket>
+            <panels>3</panels>
+            <picks>5</picks>
+        </ticket>
+    </game-type>
+    <game-type>
+        <id>3</id>
+        <name>Third game type</name>
+        <ticket>
+            <range>90</range>
+            <picks>5</picks>
+            <panels>3</panels>
+        </ticket>
+    </game-type>
+</game-types>
