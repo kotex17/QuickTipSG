@@ -1,6 +1,4 @@
 package objects;
-
-import com.sun.xml.internal.xsom.impl.scd.Iterators;
 import org.apache.commons.lang3.RandomUtils;
 
 import javax.xml.bind.annotation.XmlElement;
@@ -30,16 +28,6 @@ public class Game implements QuickTip {
     }
 
     @Override
-    public String toString() {
-        StringBuilder stringBuilder = new StringBuilder();
-        if (name != null)
-            stringBuilder.append(String.format("Name: %s\t", name));
-        if (ticket != null)
-            stringBuilder.append(String.format("Ticket: %s\t", ticket));
-        return stringBuilder.toString();
-    }
-
-    @Override
     public Map<Integer,List<Integer>> giveTip() {
         Map<Integer,List<Integer>> lotteryMap = new HashMap<>();
 
@@ -55,5 +43,15 @@ public class Game implements QuickTip {
 
     private int pickNumber() {
         return RandomUtils.nextInt(this.getTicket().getRange().getMinimum(), this.getTicket().getRange().getMaximum() + 1);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        if (name != null)
+            stringBuilder.append(String.format("Name: %s\t", name));
+        if (ticket != null)
+            stringBuilder.append(String.format("Ticket: %s\t", ticket));
+        return stringBuilder.toString();
     }
 }

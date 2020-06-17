@@ -1,11 +1,11 @@
 package runner;
 
 import logic.GameGenerator;
-import logic.QuicktipGamePlay;
+import logic.QuickTipGamePlay;
 import objects.Play;
 import objects.Game;
 import objects.GameList;
-import parser.XmlReader;
+import reader.XmlReader;
 
 import java.util.Optional;
 
@@ -24,8 +24,8 @@ public class AppRunner {
 
         if (game.isPresent()) {
             //play the game
-            GameGenerator quicktipGenerator = new QuicktipGamePlay(play, game.get());
-            quicktipGenerator.generate();
+            GameGenerator quickTipGenerator = new QuickTipGamePlay(play, game.get());
+            quickTipGenerator.generate();
         } else {
             System.out.println("Invalid Game");
         }

@@ -8,14 +8,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class QuicktipGamePlay implements GameGenerator {
+public class QuickTipGamePlay implements GameGenerator {
 
     private Map<Integer, Map<Integer, List<Integer>>> generatedTips;
 
     private QuickTip game;
     private Play play;
 
-    public QuicktipGamePlay(Play play, QuickTip game) {
+    public QuickTipGamePlay(Play play, QuickTip game) {
         this.game = game;
         this.play = play;
         generatedTips = new HashMap<>();

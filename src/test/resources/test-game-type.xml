@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game-types>
+    <game-type>
+        <id>1</id>
+        <name>First test type</name>
+        <ticket>
+            <range>90</range>
+            <picks>5</picks>
+        </ticket>
+    </game-type>
+    <game-type>
+        <id>2</id>
+        <name>Second test type</name>
+        <ticket>
+            <panels>2</panels>
+            <picks>2</picks>
+        </ticket>
+    </game-type>
+</game-types>
