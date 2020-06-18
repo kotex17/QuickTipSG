@@ -16,7 +16,7 @@ public class GameList {
         return gameList;
     }
 
-    public Optional<Game> getGameTypeById(int id){
-       return this.getGameList().stream().filter(g -> g.getId()==id).findFirst();
+    public Optional<Game> getGameTypeById(int id) {
+        return this.getGameList().stream().filter(g -> g.getId() == id).findFirst();
     }
 }

@@ -1,6 +1,7 @@
 package objects;
 
 import org.apache.commons.lang3.Range;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 

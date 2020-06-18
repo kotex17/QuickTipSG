@@ -1,9 +1,13 @@
 package objects;
+
 import org.apache.commons.lang3.RandomUtils;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @XmlRootElement(name = "game-type")
 public class Game implements QuickTip {
@@ -28,12 +32,12 @@ public class Game implements QuickTip {
     }
 
     @Override
-    public Map<Integer,List<Integer>> giveTip() {
-        Map<Integer,List<Integer>> lotteryMap = new HashMap<>();
+    public Map<Integer, List<Integer>> giveTip() {
+        Map<Integer, List<Integer>> lotteryMap = new HashMap<>();
 
         for (int i = 0; i < this.getTicket().getPanels(); i++) {
             List<Integer> lotteryList = new ArrayList<>();
-            lotteryMap.put(i+1,lotteryList);
+            lotteryMap.put(i + 1, lotteryList);
             for (int j = 0; j < this.getTicket().getPicks(); j++) {
                 lotteryList.add(pickNumber());
             }

@@ -3,17 +3,17 @@ package unit;
 import objects.GameList;
 import objects.Play;
 import org.junit.Assert;
-import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import reader.XmlReader;
 
 
 public class XmlReaderTest {
 
-    String testXmlPath;
+    static String testXmlPath;
 
-    @Before
-    public void init() {
+    @BeforeClass
+    public static void init() {
         testXmlPath = "src/test/resources/test-game-type.xml";
     }
 
