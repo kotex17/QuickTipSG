@@ -35,6 +35,6 @@ public class GameTest {
 
         Map<Integer, List<Integer>> tips = game.giveTip();
         Assert.assertNotNull(tips);
-        Assert.assertEquals(tips.get(1).size(), picks);
+        Assert.assertEquals(tips.get(0).size(), picks);
     }
 }

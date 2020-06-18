@@ -26,6 +26,7 @@ public class AppRunner {
             //play the game
             GameGenerator quickTipGenerator = new QuickTipGamePlay(play, game.get());
             quickTipGenerator.generate();
+            quickTipGenerator.display();
         } else {
             System.out.println("Invalid Game");
         }

@@ -9,6 +9,7 @@ import java.util.Map;
 
 public class QuickTipGamePlay implements GameGenerator {
 
+    //stores tickets map and panel map with pick list
     private Map<Integer, Map<Integer, List<Integer>>> generatedTips;
 
     private QuickTip game;
@@ -21,13 +22,27 @@ public class QuickTipGamePlay implements GameGenerator {
     }
 
     public void generate() {
-        System.out.println(game);
         for (int i = 0; i < play.getNumberOfTickets(); i++) {
-            generatedTips.put(i + 1, game.giveTip());
-            System.out.println(new StringBuilder().append("Ticket")
-                    .append(i + 1)
-                    .append(": ")
-                    .append(game.giveTip()));
+            generatedTips.put(i, game.giveTip());
         }
+    }
+
+    public void display() {
+        System.out.println(game);
+        StringBuilder stringBuilder = new StringBuilder();
+
+        for (int i = 0; i < generatedTips.size(); i++) {
+            stringBuilder.append("Ticket").append(i + 1).append(": ");
+            Map<Integer, List<Integer>> panelsMap = generatedTips.get(i);
+
+            for (int j = 0; j < panelsMap.size(); j++) { //displays the panels per ticket
+                stringBuilder.append("\n\tPanel").append(j + 1).append(": ");
+                for (Integer number : panelsMap.get(j)) {
+                    stringBuilder.append(number).append("\t");
+                }
+            }
+            stringBuilder.append("\n");
+        }
+        System.out.println(stringBuilder);
     }
 }

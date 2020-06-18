@@ -4,7 +4,6 @@ import objects.Game;
 import objects.GameList;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -14,8 +13,6 @@ import org.mockito.Spy;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Optional;
 
 @RunWith(MockitoJUnitRunner.class)

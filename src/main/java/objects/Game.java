@@ -37,7 +37,7 @@ public class Game implements QuickTip {
 
         for (int i = 0; i < this.getTicket().getPanels(); i++) {
             List<Integer> lotteryList = new ArrayList<>();
-            lotteryMap.put(i + 1, lotteryList);
+            lotteryMap.put(i, lotteryList);
             for (int j = 0; j < this.getTicket().getPicks(); j++) {
                 lotteryList.add(pickNumber());
             }
