@@ -21,7 +21,7 @@ public class GameTest {
     Ticket ticket;
 
     @InjectMocks
-    Game game = new Game();
+    Game game;
 
     @Test
     public void giveTipTest() {

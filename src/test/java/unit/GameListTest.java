@@ -25,7 +25,7 @@ public class GameListTest {
     ArrayList<Game> list;
 
     @InjectMocks
-    GameList gameList = new GameList();
+    GameList gameList;
 
     @Before
     public void init() {

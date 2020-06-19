@@ -21,7 +21,7 @@ public class QuickTipGamePlayTest {
     QuickTip game;
 
     @InjectMocks
-    QuickTipGamePlay quickTipGamePlay = new QuickTipGamePlay(play, game);
+    QuickTipGamePlay quickTipGamePlay;
 
     @Test
     public void testGenerate() {
