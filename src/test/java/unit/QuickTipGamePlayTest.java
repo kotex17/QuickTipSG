@@ -3,21 +3,16 @@ package unit;
 import logic.QuickTipGamePlay;
 import objects.Play;
 import objects.QuickTip;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.Mockito;
+import org.mockito.*;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class QuickTipGamePlayTest {
-
 
     @Mock
     Play play;
@@ -26,18 +21,24 @@ public class QuickTipGamePlayTest {
     QuickTip game;
 
     @InjectMocks
-    QuickTipGamePlay quickTipGamePlay = new QuickTipGamePlay();
+    QuickTipGamePlay quickTipGamePlay = new QuickTipGamePlay(play, game);
 
     @Test
     public void testGenerate() {
 
-        Mockito.when(play.getGameType()).thenReturn(1);
-
+        int key = 1;
+        List<Integer> numberList = Arrays.asList(1, 23, 44, 67, 2);
         Map<Integer, List<Integer>> gameMap = new HashMap<>();
-        gameMap.put(1, Arrays.asList(1,55,6,88,29));
+        gameMap.put(key, numberList);
+
         Mockito.when(game.giveTip()).thenReturn(gameMap);
+        Mockito.when(play.getNumberOfTickets()).thenReturn(1);
 
         quickTipGamePlay.generate();
+
+        Assert.assertNotNull(quickTipGamePlay.getGeneratedTips());
+        Assert.assertTrue(quickTipGamePlay.getGeneratedTips().get(0).size() > 0);
+        Assert.assertEquals(5, quickTipGamePlay.getGeneratedTips().get(0).get(key).size());
     }
 
 }

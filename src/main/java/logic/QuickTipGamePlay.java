@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class QuickTipGamePlay implements GameGenerator {
 
-    //stores tickets map and panel map with pick list
+    //stores tickets map to panel map with pick list
     private Map<Integer, Map<Integer, List<Integer>>> generatedTips;
 
     private QuickTip game;
@@ -18,12 +18,12 @@ public class QuickTipGamePlay implements GameGenerator {
     public QuickTipGamePlay(Play play, QuickTip game) {
         this.game = game;
         this.play = play;
-        generatedTips = new HashMap<>();
+        this.generatedTips = new HashMap<>();
     }
 
     public void generate() {
         for (int i = 0; i < play.getNumberOfTickets(); i++) {
-            generatedTips.put(i, game.giveTip());
+            this.generatedTips.put(i, game.giveTip());
         }
     }
 
@@ -31,9 +31,9 @@ public class QuickTipGamePlay implements GameGenerator {
         System.out.println(game);
         StringBuilder stringBuilder = new StringBuilder();
 
-        for (int i = 0; i < generatedTips.size(); i++) {
+        for (int i = 0; i < getGeneratedTips().size(); i++) {
             stringBuilder.append("Ticket").append(i + 1).append(": ");
-            Map<Integer, List<Integer>> panelsMap = generatedTips.get(i);
+            Map<Integer, List<Integer>> panelsMap = getGeneratedTips().get(i);
 
             for (int j = 0; j < panelsMap.size(); j++) { //displays the panels per ticket
                 stringBuilder.append("\n\tPanel").append(j + 1).append(": ");
@@ -44,5 +44,9 @@ public class QuickTipGamePlay implements GameGenerator {
             stringBuilder.append("\n");
         }
         System.out.println(stringBuilder);
+    }
+
+    public Map<Integer, Map<Integer, List<Integer>>> getGeneratedTips() {
+        return generatedTips;
     }
 }

@@ -39,12 +39,13 @@ public class Game implements QuickTip {
             List<Integer> lotteryList = new ArrayList<>();
             lotteryMap.put(i, lotteryList);
             for (int j = 0; j < this.getTicket().getPicks(); j++) {
-                lotteryList.add(pickNumber());
+                lotteryList.add(pickNumber()); //filling the panel with picked numbers
             }
         }
         return lotteryMap;
     }
 
+    //pick random number from the range
     private int pickNumber() {
         return RandomUtils.nextInt(this.getTicket().getRange().getMinimum(), this.getTicket().getRange().getMaximum() + 1);
     }
